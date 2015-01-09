@@ -15,14 +15,14 @@ group :development, :test do
   gem 'spring'
 end
 
-group :production do
-  gem 'pg'
-end
-
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'high_voltage'
 
 group :development do
   gem 'rails_layout'
+end
+
+group :production do
+  gem 'pg'
 end
