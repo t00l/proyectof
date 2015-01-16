@@ -1,4 +1,3 @@
-<h2>Editar Perfil <%= current_user.name %></h2>
 
 <%= form_for @perfil, :url=>{:action=>:update}, :html=>{:method=>:put} do |f| %>
  <% if @perfil.errors.any? %>
@@ -15,31 +14,45 @@
     </div>
   <% end %>
 
-<p><%= f.label :nombre %><br />
-<%= f.text_field :nombre %></p>
+  <div class="authform">
+  <h4>Editar Perfil:</h4> <small><%= current_user.email %></small>
+<p></p>
+<fieldset>
+  <div class="form-group">
+  <p><%= f.label :nombre %><br />
+  <%= f.text_field :nombre, class: 'form-control' %></p>
+  </div>
 
+  <div class="form-group">
   <div><%= f.label :apellidos %><br />
-  <%= f.text_field :apellidos %></div>
+  <%= f.text_field :apellidos, class: 'form-control' %></div>
+  </div>
 
-  <div><%= f.label :ciudad %><br />
-  <%= f.text_field :ciudad %></div>
+  <div class="form-group">
+    <div><%= f.label :ciudad %><br />
+    <%= f.text_field :ciudad, class: 'form-control' %></div>
+  </div>
 
-  <div><%= f.label :sexo %><br />
-  <%= f.radio_button :sexo, "Hombre" %> Hombre
-  <%= f.radio_button :sexo, "Mujer" %> Mujer
-   </div>
+  <div class="radio">
+        <strong>Sexo</strong>
+        <p></p>
+        <%= f.radio_button :sexo, 'Hombre', :checked => true %> Hombre
+        <br />
+        <%= f.radio_button :sexo, 'Mujer', :checked => false %> Mujer
+  </div>
 
+  <div class="form-group">
   <div><%= f.label :fecha_nacimiento, "Fecha de nacimiento" %><br />
   <%= f.date_select :fecha_nacimiento,
-  :start_year => 1930,
-  :end_year => Time.now.year,
-  :include_blank =>true,
-  :order => [:day, :month, :year] %></div>
+  start_year: 1930,
+  end_year: Time.now.year,
+  include_blank: true,
+  :order => [:day, :month, :year], class: "form-control" %></div>
+  </div>
+</fieldset>
 
-
-
-  <div><%= f.submit "Actualizar" %></div>
+  <div><%= f.submit "Actualizar", :class => 'button right' %></div>
 <% end %>
-
+</div>
 
 <%= link_to "Atrás", :back %>
