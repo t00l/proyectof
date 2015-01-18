@@ -11,8 +11,8 @@ class PerfilController < ApplicationController
   end
 
   def update
-  	@usuario = User.find(current_user)
-  	@perfil = @usuario.perfil
+  		@usuario = User.find(current_user)
+  		@perfil = @usuario.perfil
 
   	if @perfil.update_attributes(perfil_params)
   		redirect_to users_path
@@ -20,7 +20,6 @@ class PerfilController < ApplicationController
   	else
   		flash[:notice] = "Error al actualizar datos"
   	end
-
   end
 end
 

@@ -2,6 +2,13 @@
   <h3>Edit <%= resource_name.to_s.humanize %></h3>
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :role => 'form'}) do |f| %>
     <%= devise_error_messages! %>
+
+    <div class="form-group">
+    <label for="labelavatar">Avatar</label>
+      <%= f.file_field :avatar, id:"labelavatar" %>
+      <p class="help-block">Subir avatar para tu perfíl</p>
+    </div>
+
     <div class="form-group">
       <%= f.label :name %>
       <%= f.text_field :name, :autofocus => true, class: 'form-control' %>
