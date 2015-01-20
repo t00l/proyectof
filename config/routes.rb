@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get 'perfil/update'
 
+  get 'users/all', to: 'users#all', as: 'show_all'
+
   root to: 'visitors#index'
   devise_for :users
   resources :users

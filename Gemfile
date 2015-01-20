@@ -11,6 +11,8 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'high_voltage'
 gem "paperclip", "~> 4.2"
+gem "paperclip-dropbox", ">= 1.1.7"
+gem 'dropbox'
 
 
 group :development, :test do

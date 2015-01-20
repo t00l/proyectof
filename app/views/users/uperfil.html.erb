@@ -1,0 +1,11 @@
+<h3>Usuario(s)</h3>
+
+<div class="container">
+	<table class="table table-hover">
+		<%  @users.each do |users| %>
+		<p></p>
+			<tr><th>Nombre: <%= users.name if users.name %></th>
+			<th>Correo: <%= users.email if users.email %></th></tr>
+		<%end%>
+	</table>
+</div>
