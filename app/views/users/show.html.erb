@@ -1,0 +1,13 @@
+<br><h3>Usuario <span class="label label-default"><%= @users.name %></span></h3></br>
+<div class = container, text-align: center;>
+<li class="image-css"><%= image_tag(@users.avatar.url(:thumb)) %></li>
+<p></p>
+<h3><b>Nombre:</b> <%= @users.perfil.nombre %></h3>
+<p></p>
+<h3><b>Apellidos:</b> <%= @users.perfil.apellidos %></h3>
+<p></p>
+<h3><b>Sexo:</b> <%= @users.perfil.sexo %></h3>
+<p></p>
+<h3><b>Fecha de Nacimiento:</b> <%= @users.perfil.fecha_nacimiento %></h3><p></p>
+<h3><b>Ciudad:</b> <%= @users.perfil.ciudad %></h3>
+</div>

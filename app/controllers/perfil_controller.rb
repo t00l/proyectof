@@ -1,7 +1,7 @@
 class PerfilController < ApplicationController
 
   def index
-
+    
   end
 
   def show
